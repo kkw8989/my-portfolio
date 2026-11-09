@@ -1,24 +1,44 @@
-/* 레이아웃: 헤더, 히어로, 섹션, 푸터 */
-header{position:fixed;inset:0 0 auto;z-index:20;color:#fff;transition:background .3s,color .3s,box-shadow .3s}
-header.solid{background:rgba(255,255,255,.92);color:var(--ink);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+/* 레이아웃: 헤더, 히어로, 마퀴, 섹션, 푸터 */
+header{position:fixed;inset:0 0 auto;z-index:20;background:rgba(251,250,247,.9);backdrop-filter:blur(8px);transition:box-shadow .3s}
+header.solid{box-shadow:0 1px 0 var(--line)}
 header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
-.logo{font:700 19px Outfit,sans-serif}
+.logo{font:700 19px "Space Grotesk","Noto Sans KR",sans-serif}
+.logo::after{content:".";color:var(--blue)}
 nav{display:flex;gap:26px;font-size:14px}
-nav a{opacity:.7;padding-bottom:2px;border-bottom:2px solid transparent;transition:opacity .2s,border-color .2s}
-nav a:hover{opacity:1}
-nav a.on{opacity:1;border-color:var(--sage)}
-.hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 70px;color:#fff;overflow:hidden;background:radial-gradient(800px 480px at 82% 35%,#27402f 0,transparent 62%),#141414}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;width:100%}
-.hello{color:var(--sage);font-weight:500;margin-bottom:16px}
-.hero h1{font-size:clamp(34px,5.2vw,64px);font-weight:700;letter-spacing:-.03em;margin-bottom:24px}
-.type{min-height:58px;font-size:clamp(16px,1.7vw,20px);color:#cfd8cc;margin-bottom:34px}
-.type i{display:inline-block;width:2px;height:1.1em;margin-left:3px;vertical-align:-3px;background:var(--sage);animation:blink 1s steps(1) infinite}
+nav a{position:relative;padding:4px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+.hero{padding:170px 0 90px}
+.hello{color:var(--mute);font-weight:500;margin-bottom:20px}
+.hero h1{font-size:clamp(34px,5.4vw,72px);font-weight:700;letter-spacing:-.04em;line-height:1.18;margin-bottom:30px}
+mark{background:linear-gradient(var(--yellow),var(--yellow)) 0 88%/0 .42em no-repeat;color:inherit;padding:0 .06em;animation:hl 1s .9s var(--ease) forwards}
+.type{min-height:34px;font-size:clamp(16px,1.8vw,21px);color:var(--mute);margin-bottom:38px}
+.type i{display:inline-block;width:2px;height:1.1em;margin-left:3px;vertical-align:-3px;background:var(--blue);animation:blink 1s steps(1) infinite}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
+.band{background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;padding:22px 0}
+.band div{display:inline-flex;animation:marq 32s linear infinite}
+.band:hover div{animation-play-state:paused}
+.band span{font:600 clamp(26px,4vw,44px) "Space Grotesk",sans-serif;padding:0 26px;letter-spacing:-.02em}
+.band span::after{content:"/";color:var(--yellow);margin-left:52px}
 section{padding:120px 0}
-.sage{background:var(--sage)}
 .soft{background:var(--soft)}
 .dark{background:var(--ink);color:#fff}
-.sec-title{font:600 clamp(54px,11vw,128px)/1 Outfit,sans-serif;letter-spacing:-.04em;margin-bottom:56px}
-.detail{padding:110px 0 100px}
-footer{background:#141414bd;color:white;text-align:center;padding:15px 0;font-size:14px}
-@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}nav{gap:14px;font-size:13px}section{padding:40px 0}}
+.sec-title{font:600 clamp(46px,8vw,96px)/1 "Space Grotesk","Noto Sans KR",sans-serif;letter-spacing:-.04em;margin-bottom:56px}
+.sec-title::after{content:".";color:var(--blue)}
+.detail{padding:120px 0 100px}
+footer{background:var(--ink);color:#8c919c;text-align:center;padding:34px 0;font-size:14px;border-top:1px solid #2a2d35}
+@media(max-width:820px){.hero{padding:130px 0 60px}nav{gap:14px;font-size:13px}section{padding:80px 0}}
+/* 첫 화면 오른쪽 사진 카드 */
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:center}
+.photo-wrap{justify-self:end;width:100%;max-width:340px}
+.photo-card{margin:0;background:#fff;border:1px solid var(--line);border-radius:24px;padding:14px;box-shadow:14px 14px 0 var(--yellow);transition:transform .25s var(--ease),box-shadow .25s}
+.photo-card:hover{box-shadow:18px 18px 0 var(--blue)}
+.photo-img{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--soft);display:grid;place-items:center}
+.photo-img span{font:700 120px "Space Grotesk",sans-serif;color:#d9d4c6}
+.photo-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo-card figcaption{padding:14px 6px 4px}
+.photo-card b{display:block;font-size:18px}
+.photo-card small{color:var(--mute);font-size:14px}
+.fallback{margin:14px 0 0;color:#8c919c;font-size:14px}
+.fallback a{color:#fff}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:40px}.photo-wrap{justify-self:start;max-width:260px}}

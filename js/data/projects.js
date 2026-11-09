@@ -1,4 +1,4 @@
-/* PROJECTS 데이터 파일: 여기만 수정하면 화면에 반영됩니다 */
+/* PROJECTS 데이터 파일: 여기만 수정하면 화면에 반영됩니다. 카드를 숨기려면 해당 프로젝트에 "hidden": true 를 넣으세요 */
 window.PROJECTS = [
   {
     "id": "remate",
@@ -54,7 +54,46 @@ window.PROJECTS = [
       "text": "RM",
       "color": "#2f6f4f"
     },
-    "image": "assets/projects/remate.svg"
+    "image": "assets/projects/remate.svg",
+    "video": ""
+  },
+  {
+    "id": "itda",
+    "name": "재능잇다(itda)",
+    "subtitle": "AI 기반 소상공인 프로젝트 매칭 플랫폼",
+    "key": "소상공인의 홍보 공백과 대학생의 실전 경험 부족을 연결",
+    "period": "2026.09.13 ~ 2026.09.14",
+    "team": "상명 제1회 아이디어 해커톤, 팀장",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "Gemini API"
+    ],
+    "problem": "소상공인의 디지털 홍보 공백과 대학생의 실전 경험 부족을 연결하는 AI 기반 프로젝트 매칭 플랫폼을 기획하고 개발했습니다.",
+    "mine": [
+      "팀장, 서비스 기획 및 방향 설정",
+      "발표"
+    ],
+    "features": [
+      "소상공인 요청의 AI 기반 프로젝트 구조화",
+      "학생 역량 기반 프로젝트 매칭",
+      "AI 분석 결과 확인 및 수정"
+    ],
+    "result": [
+      "서비스 운영 방식과 차별성 및 실현 가능성을 검토했습니다."
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "logo": {
+      "text": "ID",
+      "color": "#ff7a1a"
+    },
+    "image": "assets/projects/itda.svg",
+    "video": ""
   },
   {
     "id": "moneybridge",
@@ -95,7 +134,8 @@ window.PROJECTS = [
       "text": "MB",
       "color": "#3b5bdb"
     },
-    "image": "assets/projects/moneybridge.svg"
+    "image": "assets/projects/moneybridge.svg",
+    "video": ""
   },
   {
     "id": "paprika",
@@ -130,7 +170,8 @@ window.PROJECTS = [
       "text": "PP",
       "color": "#e8590c"
     },
-    "image": "assets/projects/paprika.svg"
+    "image": "assets/projects/paprika.svg",
+    "video": ""
   },
   {
     "id": "wordapp",
@@ -160,6 +201,41 @@ window.PROJECTS = [
       "text": "EN",
       "color": "#7048e8"
     },
-    "image": "assets/projects/wordapp.svg"
+    "image": "assets/projects/wordapp.svg",
+    "video": ""
+  },
+  {
+    "id": "mealkit",
+    "hidden": false,
+    "name": "밀키트 E-커머스 플랫폼",
+    "subtitle": "1차 풀스택 프로젝트, 레시피 게시판",
+    "key": "레시피 게시판과 이미지 업로드 기능 구현",
+    "period": "",
+    "team": "풀스택 웹개발 과정 1차 프로젝트",
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "MariaDB"
+    ],
+    "problem": "Spring Boot와 React 기반 밀키트 E-커머스 풀스택 프로젝트에서 회원 간 레시피 공유 게시판을 맡았습니다.",
+    "mine": [
+      "레시피 게시판 및 이미지 업로드 기능 구현"
+    ],
+    "features": [
+      "게시글 등록",
+      "이미지 첨부",
+      "로그인 회원 정보 연동"
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "logo": {
+      "text": "MK",
+      "color": "#16a34a"
+    },
+    "image": "assets/projects/mealkit.svg",
+    "video": ""
   }
 ];

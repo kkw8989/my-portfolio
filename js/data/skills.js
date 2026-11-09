@@ -5,11 +5,11 @@ window.SKILLS = [
     "items": [
       [
         "Java",
-        "Re:Mate, MoneyBridge"
+        "Re:Mate, MoneyBridge, 밀키트"
       ],
       [
         "Spring Boot",
-        "Re:Mate, MoneyBridge, 영어 단어 학습"
+        "Re:Mate, MoneyBridge, 영어 단어 학습, 밀키트"
       ],
       [
         "Spring Security, JWT",
@@ -26,11 +26,15 @@ window.SKILLS = [
     "items": [
       [
         "React",
-        "MoneyBridge, 영어 단어 학습"
+        "MoneyBridge, 영어 단어 학습, 밀키트"
       ],
       [
         "Chart.js",
         "파프리카"
+      ],
+      [
+        "Next.js, TypeScript, Tailwind CSS",
+        "재능잇다"
       ]
     ]
   },
@@ -39,7 +43,11 @@ window.SKILLS = [
     "items": [
       [
         "MariaDB",
-        "Re:Mate, MoneyBridge"
+        "Re:Mate, MoneyBridge, 밀키트"
+      ],
+      [
+        "Supabase",
+        "재능잇다"
       ]
     ]
   },
@@ -53,6 +61,10 @@ window.SKILLS = [
       [
         "OpenAI GPT-4o Vision",
         "파프리카"
+      ],
+      [
+        "Gemini API",
+        "재능잇다"
       ]
     ]
   },

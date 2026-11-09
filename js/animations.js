@@ -1,4 +1,4 @@
-/* 움직임 담당 파일: 스크롤 등장, 타이핑, 타일 마우스 반응, 카드 기울기, 버튼 물결, 진행바 */
+/* 움직임 담당 파일: 스크롤 등장, 타이핑, 카드 기울기, 버튼 물결, 진행바 */
 const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
 let io, timer;
 
@@ -28,6 +28,20 @@ function observe(root = document) {
   root.querySelectorAll(".reveal:not(.in)").forEach(el => io.observe(el));
 }
 
+function initVideos() {
+  const mode = RM ? "off" : SETTINGS.videoMode; /* 재생 방식은 js/data/settings.js 에서 바꿉니다 */
+  document.querySelectorAll(".pimg video").forEach(v => {
+    v.muted = true;
+    const box = v.parentElement;
+    if (mode === "always") {
+      new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()), { threshold: 0.25 }).observe(v);
+    } else if (mode === "hover") {
+      box.onmouseenter = () => v.play().catch(() => {});
+      box.onmouseleave = () => { v.pause(); v.currentTime = 0; };
+    }
+  });
+}
+
 function initAnimations() {
   if (io) io.disconnect();
   clearTimeout(timer);
@@ -35,19 +49,14 @@ function initAnimations() {
   observe();
   const t = document.querySelector(".type b");
   if (t) RM ? (t.textContent = PROFILE.typed[0]) : typeLoop(t, PROFILE.typed);
-  const tiles = [...document.querySelectorAll(".tile")], hero = document.querySelector(".hero");
-  if (hero && !RM) hero.onmousemove = e => {
-    const x = e.clientX / innerWidth - 0.5, y = e.clientY / innerHeight - 0.5;
-    tiles.forEach((el, i) => { const k = (i % 3 + 1) * 12; el.style.translate = `${-x * k}px ${-y * k}px`; });
-  };
-  tiles.forEach(el => el.onclick = () => { el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop"); });
-  if (!RM) document.querySelectorAll(".pcard").forEach(c => {
+  if (!RM) document.querySelectorAll(".pcard,.photo-card").forEach(c => {
     c.onmousemove = e => {
       const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
       c.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-6px)`;
     };
     c.onmouseleave = () => (c.style.transform = "");
   });
+  initVideos();
   onScroll();
 }
 
