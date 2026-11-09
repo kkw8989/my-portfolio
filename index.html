@@ -7,207 +7,24 @@
 <meta name="description" content="업무의 흐름을 이해하고 기술로 문제를 해결하는 개발자 김경우의 포트폴리오">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#fff;--soft:#f4f5f7;--ink:#12203a;--mute:#5b6475;--line:#e2e5ea;--accent:#0e7c66}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.75 "Noto Sans KR",system-ui,sans-serif;word-break:keep-all}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.wrap{max-width:880px;margin:0 auto;padding:0 24px}
-header{position:sticky;top:0;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);z-index:5}
-header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
-header b{font-weight:700;text-decoration:none}
-nav{display:flex;gap:22px;font-size:14px}
-nav a{text-decoration:none;color:var(--mute)}
-nav a:hover{color:var(--ink)}
-.hero{padding:120px 0 88px}
-h1{font-size:clamp(30px,5.4vw,50px);line-height:1.3;margin:0 0 28px;font-weight:700;letter-spacing:-.02em}
-.lead{max-width:600px;color:var(--mute);margin:0 0 36px}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:11px 22px;border:1px solid var(--ink);border-radius:6px;text-decoration:none;font-weight:500;font-size:15px}
-.btn.fill{background:var(--ink);color:#fff}
-.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-section{padding:72px 0;border-top:1px solid var(--line)}
-h2{font-size:24px;margin:0 0 32px;font-weight:700}
-h3{font-size:17px;margin:36px 0 10px}
-p{margin:0 0 14px}
-.soft{background:var(--soft)}
-.row{display:block;padding:28px 0;border-top:1px solid var(--line);text-decoration:none}
-.row:last-child{border-bottom:1px solid var(--line)}
-.row h3{margin:0 0 4px;font-size:20px}
-.row:hover h3{color:var(--accent)}
-.sub{color:var(--mute);margin:0 0 10px}
-.key{font-weight:500;color:var(--accent);margin:0 0 10px}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.tags span{font-size:13px;padding:2px 10px;background:var(--soft);border-radius:4px;color:var(--mute)}
-.badge{font-size:13px;color:var(--accent);font-weight:500;margin-left:10px}
-.grid{display:grid;grid-template-columns:140px 1fr;gap:20px 24px}
-.grid dt{font-weight:700}
-.grid dd{margin:0}
-.sk{display:flex;flex-wrap:wrap;gap:6px 24px}
-.sk div{min-width:200px}
-.sk small{display:block;color:var(--mute);font-size:13px;line-height:1.5}
-.tl{list-style:none;margin:0;padding:0}
-.tl li{display:grid;grid-template-columns:140px 1fr;gap:4px 24px;padding:16px 0;border-top:1px solid var(--line)}
-.tl em{font-style:normal;color:var(--mute);font-size:14px}
-.tl b{font-weight:500}
-.tl span{grid-column:2;color:var(--mute);font-size:15px}
-ul{padding-left:20px;margin:0 0 14px}
-li{margin-bottom:6px}
-.flow{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:0;list-style:none}
-.flow li{margin:0;padding:6px 14px;border:1px solid var(--line);border-radius:6px;font-size:14px;background:var(--soft)}
-.note{border-left:3px solid var(--accent);padding:4px 16px;color:var(--mute);margin:20px 0}
-.back{display:inline-block;margin:36px 0 0;color:var(--mute);text-decoration:none;font-size:14px}
-.detail{padding:48px 0 96px}
-footer{padding:36px 0;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
-@media(max-width:640px){nav{gap:14px}.grid,.tl li{grid-template-columns:1fr}.tl span{grid-column:1}.hero{padding:72px 0 56px}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
+<div class="progress" id="progress"></div>
 <div id="app"></div>
-<script>
-/* ===== 여기만 고치면 됩니다 (프로젝트, 기술, 경험, 연락처 데이터) ===== */
-const DATA = {
-  profile: {
-    name: "김경우",
-    headline: "업무의 흐름을 이해하고,<br>기술로 문제를 해결하는 개발자 김경우입니다.",
-    intro: "웹 시스템 개발 경험을 기업의 업무 개선으로 확장하고 싶은 개발자입니다. Java와 Spring Boot 백엔드를 중심으로 React 화면, 데이터베이스, AI 기능 연계까지 서비스가 처음부터 끝까지 이어지도록 만듭니다.",
-    about: [
-      "개발에 들어가기 전에 업무의 목적과 필요한 데이터부터 정리합니다. 기능이 각각 동작해도 흐름이 끊기면 쓸 수 없다는 점을 프로젝트마다 확인했습니다.",
-      "오류가 생기면 화면의 요청, 인증 정보 전달, 서버 처리, 데이터 저장 순서로 좁혀 원인을 찾고, AI 기능은 정답과 대조해 수치로 검증한 뒤 서비스에 반영합니다."
-    ]
-  },
-  contact: { github: "https://github.com/kkw8989", email: "", resume: "" }, /* email, resume(PDF 경로)를 채우면 자동으로 표시됩니다 */
-  projects: [
-    {
-      id: "remate", featured: true,
-      name: "Re:Mate", subtitle: "AI 영수증 분석 및 이상 결제 탐지 경비 정산 시스템",
-      key: "199건 중 187건(94%) 자동 처리, 가맹점명 정확도 85.6%에서 99.0%",
-      period: "", team: "5인 팀(백엔드 3, 프론트엔드 2), 팀장",
-      stack: ["Java", "Spring Boot", "Spring Data JPA", "MariaDB", "React", "Google OCR", "Gemini", "Gradle", "Swagger", "Render"],
-      problem: "기업 경비 정산에서는 영수증 입력과 검토가 반복되고, 관리자가 모든 건을 직접 대조해야 합니다. 건수가 쌓이면 부적절한 결제를 놓치기 쉽습니다. 입력은 자동화하고 관리자는 의심 건에만 집중하도록 만드는 것을 목표로 삼았습니다.",
-      mine: [
-        "백엔드 구조 설계 총괄: Controller-Service-Repository 계층 분리, 공통 응답 형식과 ErrorCode 관리, Swagger API 문서화, traceId 기반 로깅",
-        "RBAC 기반 인증 및 권한 구조 설계",
-        "영수증 등록 시 파일 검증과 중복 요청 처리",
-        "OCR과 Gemini 분석 결과를 백엔드 처리 흐름에 연계하고 관리자 검토 흐름 설계"
-      ],
-      flow: ["영수증 업로드", "파일 검증", "Google OCR 텍스트 추출", "Gemini 구조화", "규칙 판정", "관리자 검토"],
-      fix: [
-        "약 200건의 정답과 대조하며 9차례 개선했습니다. 분할결제와 유흥업소 판정의 근거가 되는 가맹점명 정확도가 85.6%에 그쳐 먼저 보완했습니다.",
-        "오인식 패턴을 분석해 프롬프트를 고치고 9차에 모델을 교체해 99.0%까지 올렸습니다.",
-        "이미지 전처리는 품목명 정확도를 높였지만 서버 환경의 안정성을 확인하지 못해 반영을 보류했습니다."
-      ],
-      result: [
-        "199건 중 187건(94%)이 자동 처리되었습니다.",
-        "건당 30초씩 전수 검토할 때 약 100분이던 시간이, 자동 건은 10초, 의심 12건은 1분씩 확인하는 기준으로 약 43분까지 줄었습니다(약 57% 단축, 가정에 따른 추산)."
-      ],
-      next: "Gemini가 같은 영수증의 날짜를 다르게 읽는 한계가 남아 있어, 두 번 분석해 결과가 다르면 사람이 보도록 하는 방식을 다음 과제로 정했습니다.",
-      note: "OCR과 Gemini 분석 기능의 구현은 AI 담당 팀원이 맡았고, 저는 전체 백엔드 구조와 연계 흐름을 설계했습니다.",
-      links: { github: "", demo: "" }
-    },
-    {
-      id: "moneybridge",
-      name: "MoneyBridge", subtitle: "개인 간 금융 거래 플랫폼",
-      key: "로그인부터 데이터 저장까지 흐름을 따라가며 연계 오류를 해결",
-      period: "", team: "풀스택 웹개발 과정 팀 프로젝트, 팀원",
-      stack: ["Java", "Spring Boot", "React", "MariaDB", "Firebase", "AWS"],
-      problem: "개인 간 금전 거래에서 채권자와 채무자의 거래 정보를 연결해 관리하는 웹 플랫폼입니다.",
-      mine: ["Firebase 로그인 및 이메일 인증", "알림 기능", "게시글 CRUD 오류 수정", "채권자와 채무자 연결 기능", "AWS 배포"],
-      fix: [
-        "로그인 이후 사용자 정보가 필요한 기능과 게시글 데이터가 연결되는 과정에서 오류가 났습니다.",
-        "개별 API만 고치면 다른 기능에서 같은 문제가 반복될 수 있다고 판단해, 화면의 요청, 인증 정보 전달, 서버 처리, 데이터 저장 순서로 원인을 좁혔습니다.",
-        "AWS 환경에서도 실행해 개발 환경과 배포 환경의 차이를 검토했습니다."
-      ],
-      result: ["인증된 사용자가 올바른 데이터를 조회, 수정, 삭제하는지까지 점검해 기능 간 연결을 안정화했습니다."],
-      links: { github: "", demo: "" }
-    },
-    {
-      id: "paprika",
-      name: "파프리카", subtitle: "영수증 이미지 기반 스마트 소비 분석 웹 프로그램",
-      key: "영수증 사진에서 소비를 분류하고 지출 통계를 시각화",
-      period: "2026.04 ~ 2026.06", team: "4인 팀(파이썬 프로그래밍 수업), 팀장",
-      stack: ["Python", "Flask", "OpenAI GPT-4o Vision API", "Chart.js", "GitHub", "Notion"],
-      problem: "영수증 사진을 올리면 날짜, 금액, 가맹점명을 추출해 소비를 자동 분류하고, 월별과 카테고리별 지출 통계를 보여주는 웹 프로그램입니다.",
-      mine: ["전체 설계, 주요 기능 구현, 발표"],
-      fix: ["AI가 잘못 읽은 부분을 원본 영수증과 비교하며 직접 수정할 수 있게 해 인식 오류를 사용자가 바로잡도록 했습니다."],
-      result: ["영수증 OCR 자동 분류, 회원가입 및 로그인(비밀번호 해시), 월별 목표 지출 경고, 소비 통계 시각화를 구현했습니다."],
-      links: { github: "", demo: "" }
-    },
-    {
-      id: "wordapp",
-      name: "영어 단어 학습 웹 서비스", subtitle: "3학년 전공 수업 프로젝트",
-      key: "역할을 나눠 일정 안에 하나의 서비스로 완성",
-      period: "", team: "팀장",
-      stack: ["Spring Boot", "Spring Security", "JWT", "React"],
-      problem: "팀원의 개발 경험과 투입 가능한 시간을 고려해, 팀원은 자료 조사와 발표 준비를 맡고 저는 서비스 구조 설계와 주요 개발을 담당했습니다.",
-      mine: ["JWT 인증과 Spring Security 적용", "데이터 생성, 조회, 수정, 삭제 기능 구현", "프론트엔드에 필요한 데이터와 서버 응답 형식 일치", "기능별 진행 상황을 팀원과 공유해 발표 내용이 실제 구현과 맞도록 조정"],
-      links: { github: "", demo: "" }
-    }
-  ],
-  skills: [
-    { group: "백엔드", items: [["Java", "Re:Mate, MoneyBridge"], ["Spring Boot", "Re:Mate, MoneyBridge, 영어 단어 학습"], ["Spring Security, JWT", "영어 단어 학습, Re:Mate(RBAC)"], ["Python, Flask", "파프리카"]] },
-    { group: "프론트엔드", items: [["React", "MoneyBridge, 영어 단어 학습"], ["Chart.js", "파프리카"]] },
-    { group: "데이터베이스", items: [["MariaDB", "Re:Mate, MoneyBridge"]] },
-    { group: "AI 및 OCR", items: [["Google OCR, Gemini", "Re:Mate 연계 및 정확도 검증"], ["OpenAI GPT-4o Vision", "파프리카"]] },
-    { group: "도구 및 배포", items: [["Git, GitHub", "전체 프로젝트"], ["AWS", "MoneyBridge 배포"], ["Render", "Re:Mate 배포"], ["Gradle, Swagger", "Re:Mate"]] }
-  ],
-  timeline: [
-    { when: "", title: "캡스톤 디자인 입선", tag: "수상", desc: "Sortify 팀, 졸업프로젝트 Re:Mate" },
-    { when: "", title: "풀스택 웹개발 교육 과정", tag: "교육", desc: "React, Java, Spring Boot, 데이터베이스, AWS 배포, 팀 프로젝트 2건" },
-    { when: "", title: "상명대학교 컴퓨터과학전공", tag: "학력", desc: "2021년 입학, 2027년 2월 졸업 예정" }
-  ]
-};
-/* ===== 아래는 화면 코드입니다 ===== */
-const app = document.getElementById("app");
-const tags = a => `<div class="tags">${a.map(x => `<span>${x}</span>`).join("")}</div>`;
-const ul = a => `<ul>${a.map(x => `<li>${x}</li>`).join("")}</ul>`;
-const D = DATA, C = D.contact;
-const head = `<header><div class="wrap"><b><a href="#" style="text-decoration:none">${D.profile.name}</a></b><nav><a href="#about">소개</a><a href="#projects">프로젝트</a><a href="#skills">기술</a><a href="#timeline">경험</a><a href="#contact">연락</a></nav></div></header>`;
-
-function home() {
-  const rows = D.projects.map(p => `<a class="row" href="#p/${p.id}"><h3>${p.name}${p.featured ? '<span class="badge">대표 프로젝트</span>' : ""}</h3><p class="sub">${p.subtitle}</p><p class="key">${p.key}</p>${tags(p.stack.slice(0, 6))}</a>`).join("");
-  const sk = D.skills.map(g => `<dt>${g.group}</dt><dd><div class="sk">${g.items.map(i => `<div>${i[0]}<small>${i[1]}</small></div>`).join("")}</div></dd>`).join("");
-  const tl = D.timeline.map(t => `<li><em>${t.when || t.tag}</em><b>${t.title}</b><span>${t.desc}</span></li>`).join("");
-  const links = [C.email && `<a class="btn" href="mailto:${C.email}">이메일 보내기</a>`, C.resume && `<a class="btn" href="${C.resume}">이력서 PDF 보기</a>`].filter(Boolean).join("");
-  return `${head}<main>
-  <div class="wrap hero"><h1>${D.profile.headline}</h1><p class="lead">${D.profile.intro}</p>
-  <div class="btns"><a class="btn fill" href="#projects">프로젝트 보기</a><a class="btn" href="${C.github}" target="_blank" rel="noopener">GitHub 방문하기</a></div></div>
-  <section id="about" class="soft"><div class="wrap"><h2>소개</h2>${D.profile.about.map(t => `<p>${t}</p>`).join("")}</div></section>
-  <section id="projects"><div class="wrap"><h2>프로젝트</h2>${rows}</div></section>
-  <section id="skills" class="soft"><div class="wrap"><h2>기술 스택</h2><dl class="grid">${sk}</dl></div></section>
-  <section id="timeline"><div class="wrap"><h2>경험과 학력</h2><ul class="tl">${tl}</ul></div></section>
-  <section id="contact" class="soft"><div class="wrap"><h2>연락하기</h2><p>프로젝트나 협업에 관심이 있으시면 편하게 연락해 주세요.</p><div class="btns"><a class="btn fill" href="${C.github}" target="_blank" rel="noopener">GitHub</a>${links}</div></div></section>
-  </main><footer><div class="wrap">${D.profile.name} 포트폴리오</div></footer>`;
-}
-
-function detail(p) {
-  const sec = (t, body) => body ? `<h3>${t}</h3>${body}` : "";
-  const l = [p.links.github && `<a class="btn" href="${p.links.github}" target="_blank" rel="noopener">GitHub</a>`, p.links.demo && `<a class="btn" href="${p.links.demo}" target="_blank" rel="noopener">서비스 보기</a>`].filter(Boolean).join("");
-  return `${head}<main class="wrap detail"><a class="back" href="#projects">프로젝트 목록으로</a>
-  <h1 style="margin-top:20px;font-size:clamp(28px,4.6vw,40px)">${p.name}</h1><p class="sub">${p.subtitle}</p>
-  <dl class="grid" style="margin:24px 0 0"><dt>팀 구성</dt><dd>${p.team}</dd>${p.period ? `<dt>기간</dt><dd>${p.period}</dd>` : ""}<dt>기술</dt><dd>${p.stack.join(", ")}</dd></dl>
-  ${sec("문제와 목표", `<p>${p.problem}</p>`)}
-  ${sec("내가 맡은 일", ul(p.mine))}
-  ${p.note ? `<p class="note">${p.note}</p>` : ""}
-  ${p.flow ? sec("처리 흐름", `<ol class="flow">${p.flow.map(x => `<li>${x}</li>`).join("")}</ol>`) : ""}
-  ${sec("문제 해결 과정", p.fix && ul(p.fix))}
-  ${sec("결과", p.result && ul(p.result))}
-  ${sec("다음 개선", p.next && `<p>${p.next}</p>`)}
-  ${l ? `<div class="btns" style="margin-top:32px">${l}</div>` : ""}</main>`;
-}
-
-let view = "";
-function route() {
-  const m = location.hash.match(/^#p\/(.+)$/), p = m && D.projects.find(x => x.id === m[1]);
-  const next = p ? "p:" + p.id : "home";
-  if (next !== view) { app.innerHTML = p ? detail(p) : home(); view = next; if (p) window.scrollTo(0, 0); }
-  if (!p) { const el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); else if (!location.hash) window.scrollTo(0, 0); }
-}
-addEventListener("hashchange", route);
-route();
-</script>
+<!-- 데이터: 내용을 바꾸고 싶으면 js/data 폴더만 수정 -->
+<script src="js/data/profile.js"></script>
+<script src="js/data/contact.js"></script>
+<script src="js/data/projects.js"></script>
+<script src="js/data/skills.js"></script>
+<script src="js/data/timeline.js"></script>
+<!-- 화면 코드 -->
+<script src="js/render.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

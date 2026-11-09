@@ -1,0 +1,51 @@
+/* 컴포넌트: 기술 타일, 프로젝트 카드, 기술 스택, 소개, 경험, 상세 페이지 */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:420px;margin-left:auto}
+.tile{aspect-ratio:1;display:grid;place-items:center;border-radius:24px;color:#fff;font:700 clamp(15px,2vw,22px) Outfit,sans-serif;cursor:pointer;user-select:none;box-shadow:0 16px 32px rgba(0,0,0,.4);animation:float 5s ease-in-out infinite;animation-delay:var(--d);transition:translate .35s var(--ease)}
+.tile img{width:58%}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.pcard{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:0 18px 40px rgba(20,40,25,.14);transition:transform .25s var(--ease)}
+.pimg{position:relative;aspect-ratio:16/10;overflow:hidden;background:#222}
+.pimg img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.pcard:hover .pimg img{transform:scale(1.07)}
+.pfeat{position:absolute;top:16px;left:16px;background:#141414;color:#fff;font-size:13px;padding:4px 12px;border-radius:999px}
+.pover{position:absolute;inset:0;display:flex;gap:10px;align-items:flex-end;justify-content:center;padding:20px;background:linear-gradient(transparent 45%,rgba(0,0,0,.7));opacity:0;transition:opacity .3s}
+.pcard:hover .pover,.pcard:focus-within .pover{opacity:1}
+.pover a{background:#141414;color:#fff;padding:10px 20px;border-radius:12px;font-weight:500;transition:background .2s,transform .15s}
+.pover a:hover{background:var(--accent)}
+.pover a:active{transform:scale(.94)}
+.pbody{padding:24px 28px 28px}
+.phead{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.plogo{flex:none;width:56px;height:56px;border-radius:14px;display:grid;place-items:center;color:#fff;font:700 18px Outfit,sans-serif}
+.phead h3{font-size:22px}
+.phead p{margin:0;color:var(--mute);font-size:15px;line-height:1.5}
+.pkey{color:var(--accent);font-weight:500;font-size:15px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+.tags span{background:#e7efe4;color:#3d5a3a;padding:4px 12px;border-radius:999px;font-size:13px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.tabs button{font:500 14px "Noto Sans KR",sans-serif;padding:9px 20px;border-radius:999px;border:0;background:#e9ede6;cursor:pointer;transition:background .2s,color .2s,transform .15s}
+.tabs button:active{transform:scale(.94)}
+.tabs button.on{background:var(--ink);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:14px}
+.chip{background:#fff;border-radius:16px;padding:14px 20px;min-width:210px;box-shadow:0 6px 18px rgba(20,40,25,.07);animation:pop-in .5s var(--ease) both}
+.chip b{font-weight:700}
+.chip small{display:block;color:var(--mute);font-size:13px;line-height:1.5}
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+.about .sec-title{margin:0}
+.about p{font-size:18px;color:#3b4540}
+.tl{display:grid;gap:18px}
+.tcard{display:grid;grid-template-columns:150px 1fr;gap:6px 28px;padding:26px 30px;border-radius:var(--r);background:#fff;border:1px solid var(--line);transition:transform .25s var(--ease),box-shadow .25s}
+.tcard:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,40,25,.1)}
+.ttag{align-self:start;justify-self:start;background:var(--sage);color:var(--ink);font-size:13px;font-weight:500;padding:3px 14px;border-radius:999px}
+.tcard h3{font-size:19px}
+.tcard p{grid-column:2;margin:0;color:var(--mute);font-size:15px}
+.talk{font:600 clamp(34px,6vw,72px)/1.15 "Noto Sans KR",sans-serif;letter-spacing:-.03em;margin-bottom:36px}
+.back{display:inline-block;color:var(--mute);font-size:14px;margin-bottom:24px}
+.dimg{border-radius:var(--r);width:100%;display:block;margin:28px 0 8px;box-shadow:0 18px 40px rgba(20,40,25,.16)}
+.dgrid{display:grid;grid-template-columns:130px 1fr;gap:10px 24px;margin:28px 0}
+.dgrid dt{font-weight:700}
+.dgrid dd{margin:0}
+.dsec h3{font-size:20px;margin:44px 0 12px}
+.flow{display:flex;gap:10px;flex-wrap:wrap;padding:0;margin:0 0 14px;list-style:none}
+.flow li{margin:0;padding:8px 16px;border-radius:12px;background:var(--soft);font-size:14px;border:1px solid var(--line)}
+.note{border-left:3px solid var(--accent);padding:4px 18px;color:var(--mute);margin:22px 0}
+@media(max-width:820px){.pgrid,.about,.tcard,.dgrid{grid-template-columns:1fr}.tcard p{grid-column:1}.tiles{margin:0;max-width:360px}}
