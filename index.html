@@ -177,7 +177,7 @@ function home() {
   <div class="btns"><a class="btn fill" href="#projects">프로젝트 보기</a><a class="btn" href="${C.github}" target="_blank" rel="noopener">GitHub 방문하기</a></div></div>
   <section id="about" class="soft"><div class="wrap"><h2>소개</h2>${D.profile.about.map(t => `<p>${t}</p>`).join("")}</div></section>
   <section id="projects"><div class="wrap"><h2>프로젝트</h2>${rows}</div></section>
-  <section id="skills" class="soft"><div class="wrap"><h2>기술 스택</h2><p class="sub">사용해 본 프로젝트가 있는 기술만 적었습니다.</p><dl class="grid">${sk}</dl></div></section>
+  <section id="skills" class="soft"><div class="wrap"><h2>기술 스택</h2><dl class="grid">${sk}</dl></div></section>
   <section id="timeline"><div class="wrap"><h2>경험과 학력</h2><ul class="tl">${tl}</ul></div></section>
   <section id="contact" class="soft"><div class="wrap"><h2>연락하기</h2><p>프로젝트나 협업에 관심이 있으시면 편하게 연락해 주세요.</p><div class="btns"><a class="btn fill" href="${C.github}" target="_blank" rel="noopener">GitHub</a>${links}</div></div></section>
   </main><footer><div class="wrap">${D.profile.name} 포트폴리오</div></footer>`;
