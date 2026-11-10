@@ -47,52 +47,48 @@ window.PROJECTS = [
     "next": "Gemini가 같은 영수증의 날짜를 다르게 읽는 한계가 남아 있어, 두 번 분석해 결과가 다르면 사람이 보도록 하는 방식을 다음 과제로 정했습니다.",
     "note": "OCR과 Gemini 분석 기능의 구현은 AI 담당 팀원이 맡았고, 저는 전체 백엔드 구조와 연계 흐름을 설계했습니다.",
     "links": {
-      "github": "",
+      "github": "https://github.com/kkw8989/Re-Mate",
       "demo": ""
     },
     "logo": {
       "text": "RM",
       "color": "#2f6f4f"
     },
-    "image": "assets/projects/remate.svg",
+    "image": "assets/projects/remate.gif",
     "video": ""
   },
   {
-    "id": "itda",
-    "name": "재능잇다(itda)",
-    "subtitle": "AI 기반 소상공인 프로젝트 매칭 플랫폼",
-    "key": "소상공인의 홍보 공백과 대학생의 실전 경험 부족을 연결",
-    "period": "2026.09.13 ~ 2026.09.14",
-    "team": "상명 제1회 아이디어 해커톤, 팀장",
+    "id": "mealkit",
+    "hidden": false,
+    "name": "밀키트 E-커머스 플랫폼",
+    "subtitle": "1차 풀스택 프로젝트, 레시피 게시판",
+    "key": "레시피 게시판과 이미지 업로드 기능 구현",
+    "period": "",
+    "team": "풀스택 웹개발 과정 1차 프로젝트",
     "stack": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Supabase",
-      "Gemini API"
+      "Java",
+      "Spring Boot",
+      "React",
+      "MariaDB"
     ],
-    "problem": "소상공인의 디지털 홍보 공백과 대학생의 실전 경험 부족을 연결하는 AI 기반 프로젝트 매칭 플랫폼을 기획하고 개발했습니다.",
+    "problem": "Spring Boot와 React 기반 밀키트 E-커머스 풀스택 프로젝트에서 회원 간 레시피 공유 게시판을 맡았습니다.",
     "mine": [
-      "팀장, 서비스 기획 및 방향 설정",
-      "발표"
+      "레시피 게시판 및 이미지 업로드 기능 구현"
     ],
     "features": [
-      "소상공인 요청의 AI 기반 프로젝트 구조화",
-      "학생 역량 기반 프로젝트 매칭",
-      "AI 분석 결과 확인 및 수정"
-    ],
-    "result": [
-      "서비스 운영 방식과 차별성 및 실현 가능성을 검토했습니다."
+      "게시글 등록",
+      "이미지 첨부",
+      "로그인 회원 정보 연동"
     ],
     "links": {
-      "github": "",
+      "github": "https://github.com/kkw8989/fullstack_first",
       "demo": ""
     },
     "logo": {
-      "text": "ID",
-      "color": "#ff7a1a"
+      "text": "MK",
+      "color": "#16a34a"
     },
-    "image": "assets/projects/itda.svg",
+    "image": "assets/projects/mealkit.gif",
     "video": ""
   },
   {
@@ -127,14 +123,14 @@ window.PROJECTS = [
       "인증된 사용자가 올바른 데이터를 조회, 수정, 삭제하는지까지 점검해 기능 간 연결을 안정화했습니다."
     ],
     "links": {
-      "github": "",
+      "github": "https://github.com/kkw8989/moneybridge",
       "demo": ""
     },
     "logo": {
       "text": "MB",
       "color": "#3b5bdb"
     },
-    "image": "assets/projects/moneybridge.svg",
+    "image": "assets/projects/moneybridge.gif",
     "video": ""
   },
   {
@@ -163,14 +159,14 @@ window.PROJECTS = [
       "영수증 OCR 자동 분류, 회원가입 및 로그인(비밀번호 해시), 월별 목표 지출 경고, 소비 통계 시각화를 구현했습니다."
     ],
     "links": {
-      "github": "",
+      "github": "https://github.com/kkw8989/PythonProject",
       "demo": ""
     },
     "logo": {
       "text": "PP",
       "color": "#e8590c"
     },
-    "image": "assets/projects/paprika.svg",
+    "image": "assets/projects/paprika.gif",
     "video": ""
   },
   {
@@ -194,48 +190,53 @@ window.PROJECTS = [
       "기능별 진행 상황을 팀원과 공유해 발표 내용이 실제 구현과 맞도록 조정"
     ],
     "links": {
-      "github": "",
+      "github": "https://github.com/kkw8989/toeicvocab",
       "demo": ""
     },
     "logo": {
       "text": "EN",
       "color": "#7048e8"
     },
-    "image": "assets/projects/wordapp.svg",
+    "image": "assets/projects/toeicvocab.png",
     "video": ""
   },
   {
-    "id": "mealkit",
-    "hidden": false,
-    "name": "밀키트 E-커머스 플랫폼",
-    "subtitle": "1차 풀스택 프로젝트, 레시피 게시판",
-    "key": "레시피 게시판과 이미지 업로드 기능 구현",
-    "period": "",
-    "team": "풀스택 웹개발 과정 1차 프로젝트",
+    "id": "itda",
+    "hidden": true, /* 해커톤은 숨김 처리됨. 다시 보이게 하려면 true 를 false 로 바꾸세요 */
+    "name": "재능잇다(itda)",
+    "subtitle": "AI 기반 소상공인 프로젝트 매칭 플랫폼",
+    "key": "소상공인의 홍보 공백과 대학생의 실전 경험 부족을 연결",
+    "period": "2026.09.13 ~ 2026.09.14",
+    "team": "상명 제1회 아이디어 해커톤, 팀장",
     "stack": [
-      "Java",
-      "Spring Boot",
-      "React",
-      "MariaDB"
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "Gemini API"
     ],
-    "problem": "Spring Boot와 React 기반 밀키트 E-커머스 풀스택 프로젝트에서 회원 간 레시피 공유 게시판을 맡았습니다.",
+    "problem": "소상공인의 디지털 홍보 공백과 대학생의 실전 경험 부족을 연결하는 AI 기반 프로젝트 매칭 플랫폼을 기획하고 개발했습니다.",
     "mine": [
-      "레시피 게시판 및 이미지 업로드 기능 구현"
+      "팀장, 서비스 기획 및 방향 설정",
+      "발표"
     ],
     "features": [
-      "게시글 등록",
-      "이미지 첨부",
-      "로그인 회원 정보 연동"
+      "소상공인 요청의 AI 기반 프로젝트 구조화",
+      "학생 역량 기반 프로젝트 매칭",
+      "AI 분석 결과 확인 및 수정"
+    ],
+    "result": [
+      "서비스 운영 방식과 차별성 및 실현 가능성을 검토했습니다."
     ],
     "links": {
       "github": "",
       "demo": ""
     },
     "logo": {
-      "text": "MK",
-      "color": "#16a34a"
+      "text": "ID",
+      "color": "#ff7a1a"
     },
-    "image": "assets/projects/mealkit.svg",
+    "image": "assets/projects/itda.svg",
     "video": ""
   }
 ];

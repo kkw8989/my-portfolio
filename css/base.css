@@ -10,11 +10,15 @@ ul{padding-left:20px;margin:0 0 14px}
 li{margin-bottom:6px}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
-.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;padding:13px 26px;border-radius:10px;border:1.5px solid var(--ink);font:500 15px "Noto Sans KR",sans-serif;cursor:pointer;background:transparent;color:inherit;transition:background .2s,color .2s,border-color .2s,transform .15s}
-.btn:hover{background:var(--ink);color:#fff}
-.btn:active{transform:scale(.95);background:var(--blue);border-color:var(--blue);color:#fff}
-.btn.fill{background:var(--blue);border-color:var(--blue);color:#fff}
-.btn.fill:hover{background:var(--ink);border-color:var(--ink)}
-.btn.fill:active{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.btn{position:relative;z-index:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:12px;border:1.5px solid var(--ink);font:500 15px "Noto Sans KR",sans-serif;letter-spacing:-.01em;cursor:pointer;background:transparent;color:var(--ink);transition:color .3s,border-color .3s,transform .15s}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);transform:translateY(101%);transition:transform .35s var(--ease)}
+.btn:hover{color:#fff}
+.btn:hover::before{transform:none}
+.btn:active{transform:scale(.96);color:var(--ink);border-color:var(--yellow)}
+.btn:active::before{background:var(--yellow);transform:none}
+.btn.fill{background:var(--ink);color:#fff}
+.btn.fill::before{background:var(--blue)}
+.btn.fill:hover{border-color:var(--blue)}
+.btn.fill:active{color:var(--ink)}
 .btn .rp{position:absolute;border-radius:50%;background:rgba(255,228,94,.7);transform:scale(0);animation:rp .6s linear;pointer-events:none}
 .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:30}

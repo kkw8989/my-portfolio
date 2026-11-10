@@ -1,5 +1,7 @@
 # 김경우 포트폴리오
 
+빌드 없이 동작하는 정적 사이트입니다. `index.html`을 브라우저로 열면 바로 보입니다.
+
 ## 파일 지도 (어디에 뭐가 있나)
 
 | 바꾸고 싶은 것 | 파일 |
@@ -17,8 +19,6 @@
 | 화면 HTML 조립 | js/render.js |
 | 스크롤 등장, 타이핑, 카드 기울기, 버튼 물결 | js/animations.js |
 | 주소에 따라 홈과 상세 전환 | js/main.js |
-<<<<<<< HEAD
-=======
 
 ## 프로젝트 추가하기
 
@@ -47,4 +47,3 @@ GitHub에 이 폴더 전체를 올리고 Vercel에서 저장소를 가져오면 
 - 영상 파일(mp4 또는 webm)을 `assets/projects/`에 넣고 `js/data/projects.js`에서 해당 프로젝트의 `"video"` 값에 경로를 쓰세요. 예: `"video": "assets/projects/remate.mp4"`. 비워 두면 대표 이미지가 보입니다. GIF 파일도 쓸 수 있지만 GIF는 재생 방식을 제어할 수 없습니다.
 - 재생 방식은 `js/data/settings.js`의 `videoMode` 한 줄로 바꿉니다(always, hover, off). 실제 동작 코드는 `js/animations.js`의 `initVideos` 함수입니다.
 - 영상은 소리 없이 5~15초 반복되는 짧은 화면 녹화를 권장하고, 파일 하나당 10MB 이하로 줄이세요.
->>>>>>> 4a40680 (feat: redesign portfolio with contact, photo card and project video support)

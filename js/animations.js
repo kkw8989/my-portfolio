@@ -49,7 +49,7 @@ function initAnimations() {
   observe();
   const t = document.querySelector(".type b");
   if (t) RM ? (t.textContent = PROFILE.typed[0]) : typeLoop(t, PROFILE.typed);
-  if (!RM) document.querySelectorAll(".pcard,.photo-card").forEach(c => {
+  if (!RM) document.querySelectorAll(".pcard").forEach(c => {
     c.onmousemove = e => {
       const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
       c.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-6px)`;
