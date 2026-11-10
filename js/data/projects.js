@@ -198,7 +198,7 @@ window.PROJECTS = [
       "color": "#7048e8"
     },
     "image": "assets/projects/toeicvocab.png",
-    "video": ""
+    "video": "assets/projects/toeicvocab.mp4"
   },
   {
     "id": "itda",

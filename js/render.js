@@ -7,7 +7,7 @@ const R = (() => {
   const ext = (u, t, c = "") => `<a ${c ? `class="${c}" ` : ""}href="${u}" target="_blank" rel="noopener">${t}</a>`;
 
   const outlook = e => `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(e)}&subject=${encodeURIComponent("포트폴리오 보고 연락드립니다")}`;
-  const photo = () => `<div class="photo-wrap"><figure class="photo-card"><div class="photo-img"><span></span><img src="${PROFILE.photo}" alt="${PROFILE.name} 사진" onerror="this.style.display='none'"></div></b><small></small></figcaption></figure></div>`; //<figcaption><b>${PROFILE.name}
+const photo = () => `<div class="photo-wrap"><figure class="photo-card"><div class="photo-img"><span>${PROFILE.name.slice(0, 1)}</span><img src="${PROFILE.photo}" alt="${PROFILE.name} 사진" onerror="this.style.display='none'"></div><figcaption><b>${PROFILE.name}</b><small>상명대학교 컴퓨터과학전공</small></figcaption></figure></div>`;
   const header = `<header><div class="wrap"><a class="logo" href="#">${PROFILE.name}</a><nav><a href="#projects">프로젝트</a><a href="#skills">기술</a><a href="#about">소개</a><a href="#timeline">경험</a><a href="#contact">연락</a></nav></div></header>`;
   const footer = `<footer>© 2026 ${PROFILE.name} All rights reserved.</footer>`;
   const marquee = () => { const s = PROFILE.marquee.map(t => `<span>${t}</span>`).join(""); return `<div class="band"><div>${s}${s}</div></div>`; };
